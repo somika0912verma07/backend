@@ -23,7 +23,7 @@ exports.signup = (request, response, next) => {
         })
         .catch(err => {
             console.log(err);
-            return response.status(500).json({ message: "OOps!Somwthing Went Wrong" })
+            return response.status(500).json(err)
         }
         )
 
