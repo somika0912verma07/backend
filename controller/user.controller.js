@@ -1,8 +1,8 @@
-const { request } = require("express");
+// const { request } = require("express");
 const User=require('../model/user.model');
 
 exports.signup=(request,response,next)=>{
-    console.log(request.body)
+    console.log(request.body);
     //  const user=new User();
     // user.name=request.body.name;
     //  user.email=request.body.email;
