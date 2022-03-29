@@ -12,6 +12,9 @@ exports.signup = (request, response, next) => {
      user.email="some@gmail.com";
      user.password="pss123";
 
+     let name1 = request.body.name;
+     console.log(name1)
+
     user.save()
         .then(result => {
             console.log('loggin success');
