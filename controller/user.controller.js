@@ -3,13 +3,14 @@ const User=require('../model/user.model');
 
 exports.signup=(request,response,next)=>{
     console.log(request.body)
-     const user=new User();
-    user.name=request.body.name;
-     user.email=request.body.email;
-     user.password=request.body.password;
-    User.create(req.body)
-    .then(result=>{
+    //  const user=new User();
+    // user.name=request.body.name;
+    //  user.email=request.body.email;
+    //  user.password=request.body.password;
 
+    User.create(request.body)
+    .then(result=>{
+        console.log('loggin success');
         return response.status(201).json(result);
     })
     .catch( err=>{
