@@ -4,9 +4,13 @@ const User = require('../model/user.model');
 exports.signup = (request, response, next) => {
     console.log(request.body);
      const user=new User();
-    user.name=request.body.name;
-     user.email=request.body.email;
-     user.password=request.body.password;
+    // user.name=request.body.name;
+    //  user.email=request.body.email;
+    //  user.password=request.body.password;
+
+    user.name="some";
+     user.email="some@gmail.com";
+     user.password="pss123";
 
     user.save()
         .then(result => {
