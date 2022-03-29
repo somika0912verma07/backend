@@ -1,7 +1,7 @@
 // const { request } = require("express");
-const User=require('../model/user.model');
+const User = require('../model/user.model');
 
-exports.signup=(request,response,next)=>{
+exports.signup = (request, response, next) => {
     console.log(request.body);
     //  const user=new User();
     // user.name=request.body.name;
@@ -9,16 +9,17 @@ exports.signup=(request,response,next)=>{
     //  user.password=request.body.password;
 
     User.create(request.body)
-    .then(result=>{
-        console.log('loggin success');
-        return response.status(201).json(result);
-    })
-    .catch( err=>{
+        .then(result => {
+            console.log('loggin success');
+            console.log(result);
+            return response.status(201).json(result);
+        })
+        .catch(err => {
             console.log(err);
-            return response.status(500).json({message:"OOps!Somwthing Went Wrong"})
+            return response.status(500).json({ message: "OOps!Somwthing Went Wrong" })
         }
-    )
+        )
 
-    
-    
+
+
 };
