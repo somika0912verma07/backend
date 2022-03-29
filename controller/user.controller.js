@@ -3,12 +3,12 @@ const User = require('../model/user.model');
 
 exports.signup = (request, response, next) => {
     console.log(request.body);
-    //  const user=new User();
-    // user.name=request.body.name;
-    //  user.email=request.body.email;
-    //  user.password=request.body.password;
+     const user=new User();
+    user.name=request.body.name;
+     user.email=request.body.email;
+     user.password=request.body.password;
 
-    User.create(request.body)
+    user.save()
         .then(result => {
             console.log('loggin success');
             console.log(result);
