@@ -1,7 +1,7 @@
 const express =require('express');
 const bodyParser=require('body-parser');
 const path=require('path');
-
+const port = process.env.PORT || 3000;
 const userRouter=require("./router/user.router");
 const mongoose=require('mongoose');
 mongoose.connect("mongodb+srv://somikaverma:somikaverma12@mymongodb.q7idm.mongodb.net/backend?retryWrites=true&w=majority")
@@ -20,6 +20,6 @@ app.use(express.static(path.join(__dirname,"public")));
 
 app.use(userRouter);
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is runu");
 })
